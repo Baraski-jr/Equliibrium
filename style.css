@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500&family=Outfit:wght@300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+body {
+    background-color: hsl(217, 54%, 11%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+
+}
+p {
+    font-size: 18px;
+    font-weight: 300;
+}
+.container {
+    background-color: hsl(216, 50%, 16%);
+    border-radius: 10px;
+    padding: 23px;
+    width: 90%;
+    max-width: 375px;
+    margin: auto;
+}
+.container > .image {
+    text-align: center;
+    position: relative;
+}
+.container > .image > img {
+    width: 100%;
+    border-radius: 10px;
+}
+.ovalay {
+    display: none;
+}
+.container > .image:hover .ovalay {
+    display: inline-block;
+    position: absolute;
+    top: 150px;
+    left: 44%;
+    transition: .5s ease;
+}
+.container > .image:hover {
+    border-radius: 10px;
+    background-color: hsl(178, 100%, 50%);
+    height: 330px;
+    cursor: pointer;
+    transition: .5s ease;
+}
+.container > .image:hover img {
+    opacity: 0.5;
+}
+.container .content h2 {
+    color: hsl(0, 0%, 100%);
+    font-weight: 500;
+    padding-block: 20px;
+}
+.container .content > p {
+    color: hsl(215, 51%, 70%);
+    line-height: 1.5;
+}
+.container .content .fouth-row {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 20px;
+    border-bottom: 1px solid hsl(215, 32%, 27%);
+
+}
+.container .content .fouth-row .left {
+    color: hsl(178, 100%, 50%);
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+.container .content .fouth-row .right {
+    color: hsl(215, 51%, 70%);
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+}
+.profile {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    margin-top: 15px;
+    color: #fff;
+}
+.profile img {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+.profile .text p {
+    color: hsl(215, 51%, 70%)
+}
+.profile .text p a {
+    color: #fff;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    color: hsl(178, 100%, 50%);
+}
+.profile .text p a:hover {
+    color: hsl(178, 100%, 50%);
+}
