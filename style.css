@@ -39,7 +39,7 @@ body {
     background-position: center;
     background-size: cover;
     border-radius: 10px;
-    background-color: #fff;
+
 }
 .overlay {
     display: grid;
@@ -48,10 +48,12 @@ body {
     aspect-ratio: 1;
     border-radius: 10px;
     transition: background-color .3s;
-    opacity: .5;
+    /* mix-blend-mode: overlay; */
+
+
 }
 .overlay:hover {
-    background-color: var(--accent-bg);
+    background-color: hsla(178, 100%, 50%, 0.226);
 }
 .eye-icon {
     opacity: 0;
