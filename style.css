@@ -1,4 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500&family=Outfit:wght@300&display=swap');
+:root {
+    --accent-bg: hsl(178, 100%, 50%);
+    --accent-text:  hsl(215, 51%, 70%);
+    --main-bg: hsl(217, 54%, 11%);
+    --card-bg: hsl(216, 50%, 16%);
+    --border-line: hsl(215, 32%, 27%);
+    --White: hsl(0, 0%, 100%);
+
+    --ff: 'Outfit', sans-serif;
+    --fs: 18px;
+    --fw-300: 300;
+    --fw-400: 400;
+    --fw-600: 600;
+}
 * {
     margin: 0;
     padding: 0;
@@ -6,106 +20,106 @@
     font-family: 'Outfit', sans-serif;
 }
 body {
-    background-color: hsl(217, 54%, 11%);
+    background-color: var(--main-bg);
     min-height: 100vh;
-    display: flex;
-    align-items: center;
+    display: grid;
+    place-content: center;
 
 }
-p {
-    font-size: 18px;
-    font-weight: 300;
-}
-.container {
-    background-color: hsl(216, 50%, 16%);
-    border-radius: 10px;
-    padding: 23px;
-    width: 90%;
-    max-width: 375px;
-    margin: auto;
-}
-.container > .image {
-    text-align: center;
-    position: relative;
-}
-.container > .image > img {
-    width: 100%;
-    border-radius: 10px;
-}
-.ovalay {
-    display: none;
-}
-.container > .image:hover .ovalay {
-    display: inline-block;
-    position: absolute;
-    top: 150px;
-    left: 44%;
-    transition: .5s ease;
-}
-.container > .image:hover {
-    border-radius: 10px;
-    background-color: hsl(178, 100%, 50%);
-    height: 330px;
+.pointer {
     cursor: pointer;
-    transition: .5s ease;
 }
-.container > .image:hover img {
-    opacity: 0.5;
+.main-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
 }
-.container .content h2 {
-    color: hsl(0, 0%, 100%);
-    font-weight: 500;
-    padding-block: 20px;
+.image-container {
+    background-image: url(images/image-equilibrium.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    background-color: #fff;
 }
-.container .content > p {
-    color: hsl(215, 51%, 70%);
+.overlay {
+    display: grid;
+    place-content: center;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    transition: background-color .3s;
+    opacity: .5;
+}
+.overlay:hover {
+    background-color: var(--accent-bg);
+}
+.eye-icon {
+    opacity: 0;
+    transition: opacity .3s;
+}
+.image-container:hover .eye-icon {
+    opacity: 1;
+}
+.text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.title {
+    color: var(--White);
+    transition: color .3s;
+}
+.text {
+    color: var(--accent-text);
     line-height: 1.5;
 }
-.container .content .fouth-row {
-    display: flex;
-    justify-content: space-between;
-    padding-block: 20px;
-    border-bottom: 1px solid hsl(215, 32%, 27%);
-
+.title:hover {
+    color: var(--accent-bg);
 }
-.container .content .fouth-row .left {
-    color: hsl(178, 100%, 50%);
-    display: flex;
-    align-items: center;
-    column-gap: 5px;
-}
-.container .content .fouth-row .right {
-    color: hsl(215, 51%, 70%);
-    display: flex;
-    align-items: center;
-    column-gap: 5px;
-}
-.profile {
-    display: flex;
-    align-items: center;
-    column-gap: 10px;
-    margin-top: 15px;
-    color: #fff;
-}
-.profile img {
+.profile-image {
     width: 40px;
-    height: 40px;
+    aspect-ratio: 1;
     border: 1px solid #fff;
     border-radius: 50%;
 }
-.profile .text p {
-    color: hsl(215, 51%, 70%)
+
+.flex-group.row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-line);
+    padding-bottom: 2rem;
 }
-.profile .text p a {
+main {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 23px;
+    width: min(90%, 23rem);
+    margin-inline: auto;
+}
+.flex-group.col {
+    color: var(--accent-text);
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: var(--fs);
+}
+.profile-detail {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     color: #fff;
 }
-a {
-    text-decoration: none;
-    color: inherit;
+.code {
+    color: var(--accent-bg);
 }
-a:hover {
-    color: hsl(178, 100%, 50%);
+figcaption .text {
+    color: var(--accent-text);
+    font-size: calc(var(--fs) + 2px);
 }
-.profile .text p a:hover {
-    color: hsl(178, 100%, 50%);
+.user-name {
+    color: var(--White);
+    transition: color .3s;
+}
+.user-name:hover {
+    color: var(--accent-bg);
 }
